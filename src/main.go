@@ -7,6 +7,9 @@ import(
   "sync"
   "text/template"
 )
+// "database/sql"
+// "fmt"
+// _ "github.com/lib/pq"
 
 type templateHandler struct {
   once sync.Once
