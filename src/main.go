@@ -24,6 +24,7 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
   t.templ.Execute(w, nil)
 }
 
+// APIサーバーにする。
 func main() {
   http.Handle("/", &templateHandler{filename: "chat.html"})
 
