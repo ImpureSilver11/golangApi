@@ -1,5 +1,14 @@
 version: '3'
 services:
+  postgres:
+    container_name: postgres
+    build:
+      context: .
+      dockerfile: ./db/Dockerfile
+    environment:
+      - POSTGRES_USER=postgres_user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres_db
   app:
     build: .
     ports:

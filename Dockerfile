@@ -1,6 +1,6 @@
 FROM golang:latest
 
-WORKDIR /go
+WORKDIR /go/src
 ADD . /go
 
 CMD ["go", "run", "main.go"]
