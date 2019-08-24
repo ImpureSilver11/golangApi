@@ -16,3 +16,5 @@ run:
 
 test:
 	docker-compose run --rm app bundle exec go test
+get:
+	docker-compose run --rm app go get ${TARGET}

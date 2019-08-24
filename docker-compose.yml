@@ -2,6 +2,8 @@ version: '3'
 services:
   postgres:
     container_name: postgres
+    ports:
+      - 5432:5432
     build:
       context: .
       dockerfile: ./db/Dockerfile
@@ -10,6 +12,8 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=postgres_db
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     ports:
       - "8080:8080"
