@@ -6,3 +6,4 @@ ADD . /go
 CMD ["go", "run", "main.go"]
 
 RUN go get github.com/lib/pq
+RUN go get github.com/labstack/echo
