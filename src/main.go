@@ -1,15 +1,14 @@
 package main
 
 import (
-	"github.com/labstack/echo"
 	"./profile"
 	"./users"
+	"github.com/labstack/echo"
 )
 
+// "github.com/labstack/echo/middleware"
+
 func main() {
-	// JSONファイル取り出し
-	// raw, err := ioutil.ReadFile("./json/profile/skil.json")
-	
 	// APIサーバーにする。
 	maingPage()
 }
@@ -17,6 +16,9 @@ func main() {
 func maingPage() {
 	// Echoのインスタンス作る
 	e := echo.New()
+
+	// e.Use(middleware.Logger())
+	// e.Use(middleware.Recover())
 	// Basic認証
 	// e.Use(interceptor.BasicAuth())
 	// TODO: path綺麗に
@@ -27,4 +29,5 @@ func maingPage() {
 	e.GET("/users", users.ReturnUsers())
 	// サーバー起動
 	e.Start(":8080")
+	// e.Run(standard.New(":" + os.Getenv("PORT")))
 }

@@ -1,19 +1,20 @@
 package users
 
 import (
+	"database/sql"
 	"fmt"
 	"net/http"
-	"database/sql"
+
 	"github.com/labstack/echo"
-	_ "github.com/lib/pq"
 )
 
+// _ "github.com/lib/pq"
+
 func returnUsers() echo.HandlerFunc {
-	return func(c echo.Context) error {     //c をいじって Request, Responseを色々する
+	return func(c echo.Context) error {
 		return c.String(http.StatusOK, getUsers())
 	}
 }
-
 
 func getUsers() string {
 	// DB周り

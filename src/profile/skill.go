@@ -3,13 +3,14 @@ package profile
 import (
 	"fmt"
 	"io/ioutil"
-	"os"
 	"net/http"
+	"os"
+
 	"github.com/labstack/echo"
 )
 
 func returnSkill() echo.HandlerFunc {
-	return func(c echo.Context) error {     //c をいじって Request, Responseを色々する
+	return func(c echo.Context) error {
 		return c.String(http.StatusOK, getProfile())
 	}
 }
